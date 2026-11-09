@@ -2,20 +2,15 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>คลังความรู้ Digital Factsheet โรคและภัยสุขภาพ กรมควบคุมโรค</title>
   <meta name="description" content="คลังความรู้ Digital Factsheet โรคและภัยสุขภาพ กรมควบคุมโรค">
 
   <!-- Health Factsheet Favicon -->
-<link rel="icon"
-      type="image/png"
-      href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d6.png">
-
-<link rel="apple-touch-icon"
-      href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d6.png">
+  <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d6.png">
+  <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d6.png">
 
   <style>
-    /* รีเซ็ตขอบจอทั้งหมดเพื่อให้ Iframe แสดงผลเต็ม 100% ทั้งคอมและมือถือ */
     * {
       margin: 0;
       padding: 0;
@@ -25,24 +20,25 @@
     html, body {
       width: 100%;
       height: 100%;
-      overflow: hidden; /* ป้องกันการเกิด Scrollbar ซ้อนกัน 2 ชั้น */
-      background-color: #0a192f; /* สีพื้นหลังเดียวกับ Header ระหว่างรอโหลด */
+      overflow: hidden;
+      background-color: #0a192f;
       font-family: 'Sarabun', sans-serif;
+      /* ป้องกันการเด้งหรือยืดหดของจอมือถือเวลาเลื่อน */
+      position: fixed; 
     }
 
     .iframe-container {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 100dvh; /* รองรับความสูงหน้าจอมือถือยุคใหม่พอดีเป๊ะ */
+      width: 100vw;
+      height: 100vh;
+      /* รองรับความสูงเต็มจอแบบ Dynamic บนมือถือ (iOS/Android) */
+      height: 100dvh; 
       border: none;
       margin: 0;
       padding: 0;
       overflow: hidden;
-      z-index: 999999;
     }
 
     iframe {
@@ -56,7 +52,6 @@
 <body>
 
   <div class="iframe-container">
-    <!-- 2. นำลิงก์ Web App ที่ลงท้ายด้วย /exec มาใส่ในช่อง src ด้านล่างนี้ -->
     <iframe 
       src="https://script.google.com/macros/s/AKfycbzi4MZ0z0Aq6_JfJzasMetNL9tp6qzuFDSIpV7kPDH-lQaj6JeelYTN2IeFN_3XIcAuKw/exec"
       title="ระบบสืบค้นข้อมูลแนวทางรู้ทันโรคและภัยสุขภาพ Digital Factsheet"
